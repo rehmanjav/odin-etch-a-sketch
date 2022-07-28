@@ -2,6 +2,7 @@
 
 function plotGrid (n) {
     let container = document.querySelector(".container");
+    container.replaceChildren();
     
 
     for (let i = 0; i < n**2; i++) {
@@ -16,7 +17,21 @@ function plotGrid (n) {
 
 }
 
+function newDrawing () {
+    while (true) {
+        let prompt = prompt("Enter grid size. (100 max)");
+
+        if (+prompt <= 100 && +prompt >=1) {
+            break;
+        }
+    }
+    
+}
+
 // START
 
 plotGrid(16);
+
+let newDrawingBtn = document.querySelector(".new-drawing");
+newDrawingBtn.addEventListener('click', plotGrid());
 
