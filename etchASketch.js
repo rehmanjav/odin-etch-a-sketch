@@ -13,6 +13,23 @@ function plotGrid (n) {
         container.appendChild(newDiv);
     }
 
+    let pixels = document.querySelectorAll(".pixel");
+
+    pixels.forEach(e => {
+        e.addEventListener('mouseenter', e => {
+            console.log(e.target.style.backgroundColor);
+
+            // e.target.style.backgroundColor = "black";
+
+            // e.target.style.backgroundColor = randomColor();
+
+            console.log(+e.target.style.opacity);
+            let currentOpacity = +e.target.style.opacity + 0.1;
+            e.target.style.opacity = `${currentOpacity}`;
+                
+        });
+    });
+
 }
 
 function newDrawing () {
@@ -26,6 +43,14 @@ function newDrawing () {
     }
     plotGrid(+gridSize);
     
+}
+
+function randomColor () {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 // START

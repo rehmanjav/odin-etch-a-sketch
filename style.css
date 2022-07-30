@@ -2,17 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     /* box-sizing: border-box; */
-    background-color: gray;
+    background-color: white;
     height: 960px;
     width: 960px;
     padding: 10px;
 }
 
 .pixel {
-    background-color: white;
+    background-color: black;
     /* border: 1px solid purple; */
     /* flex-grow: 1; */
     width: 10px;
     height: 10px;
+    opacity: 0;
     
 }
