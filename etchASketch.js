@@ -4,7 +4,6 @@ function plotGrid (n) {
     let container = document.querySelector(".container");
     container.replaceChildren();
     
-
     for (let i = 0; i < n**2; i++) {
         let height = 960 / (n);
         let newDiv = document.createElement('div');
@@ -14,24 +13,27 @@ function plotGrid (n) {
         container.appendChild(newDiv);
     }
 
-
 }
 
 function newDrawing () {
+    let gridSize = '';
     while (true) {
-        let prompt = prompt("Enter grid size. (100 max)");
+        gridSize = prompt("Enter grid size. (100 max)");
 
-        if (+prompt <= 100 && +prompt >=1) {
+        if (+gridSize <= 100 && +gridSize >=1) {
             break;
         }
     }
+    plotGrid(+gridSize);
     
 }
 
 // START
 
-plotGrid(16);
-
 let newDrawingBtn = document.querySelector(".new-drawing");
-newDrawingBtn.addEventListener('click', plotGrid());
+newDrawingBtn.addEventListener('click', newDrawing);
+
+plotGrid(10);
+
+
 
